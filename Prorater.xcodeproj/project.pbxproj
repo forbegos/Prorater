@@ -3,19 +3,21 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 52;
 	objects = {
 
 /* Begin PBXBuildFile section */
+		5F24BD0624D9C48F004522F7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5F24BD0524D9C48F004522F7 /* Assets.xcassets */; };
+		5F24BD1224D9D197004522F7 /* SwiftUIKit in Frameworks */ = {isa = PBXBuildFile; productRef = 5F24BD1124D9D197004522F7 /* SwiftUIKit */; };
 		5F6494A524D999BB00D6A3DE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F6494A424D999BB00D6A3DE /* AppDelegate.swift */; };
 		5F6494A724D999BB00D6A3DE /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F6494A624D999BB00D6A3DE /* SceneDelegate.swift */; };
 		5F6494A924D999BB00D6A3DE /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F6494A824D999BB00D6A3DE /* ContentView.swift */; };
 		5F6494AE24D999BC00D6A3DE /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5F6494AD24D999BC00D6A3DE /* Preview Assets.xcassets */; };
 		5F6494B124D999BC00D6A3DE /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5F6494AF24D999BC00D6A3DE /* LaunchScreen.storyboard */; };
-		5F6494B924D99C8700D6A3DE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5F6494B824D99C8700D6A3DE /* Assets.xcassets */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		5F24BD0524D9C48F004522F7 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Assets.xcassets; path = "../../../../../OneDrive - FdO Enterprises & Holdings LLC/Protentia/Icons/AppIcons/Assets.xcassets"; sourceTree = "<group>"; };
 		5F6494A124D999BB00D6A3DE /* Prorater.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Prorater.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5F6494A424D999BB00D6A3DE /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		5F6494A624D999BB00D6A3DE /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -23,7 +25,6 @@
 		5F6494AD24D999BC00D6A3DE /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		5F6494B024D999BC00D6A3DE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		5F6494B224D999BC00D6A3DE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		5F6494B824D99C8700D6A3DE /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Assets.xcassets; path = ../../../../../Downloads/AppIcons/Assets.xcassets; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -31,6 +32,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5F24BD1224D9D197004522F7 /* SwiftUIKit in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -59,7 +61,7 @@
 				5F6494A424D999BB00D6A3DE /* AppDelegate.swift */,
 				5F6494A624D999BB00D6A3DE /* SceneDelegate.swift */,
 				5F6494A824D999BB00D6A3DE /* ContentView.swift */,
-				5F6494B824D99C8700D6A3DE /* Assets.xcassets */,
+				5F24BD0524D9C48F004522F7 /* Assets.xcassets */,
 				5F6494AF24D999BC00D6A3DE /* LaunchScreen.storyboard */,
 				5F6494B224D999BC00D6A3DE /* Info.plist */,
 				5F6494AC24D999BC00D6A3DE /* Preview Content */,
@@ -91,6 +93,9 @@
 			dependencies = (
 			);
 			name = Prorater;
+			packageProductDependencies = (
+				5F24BD1124D9D197004522F7 /* SwiftUIKit */,
+			);
 			productName = Prorater;
 			productReference = 5F6494A124D999BB00D6A3DE /* Prorater.app */;
 			productType = "com.apple.product-type.application";
@@ -119,6 +124,9 @@
 				Base,
 			);
 			mainGroup = 5F64949824D999BB00D6A3DE;
+			packageReferences = (
+				5F24BD1024D9D197004522F7 /* XCRemoteSwiftPackageReference "SwiftUIKit" */,
+			);
 			productRefGroup = 5F6494A224D999BB00D6A3DE /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -135,7 +143,7 @@
 			files = (
 				5F6494B124D999BC00D6A3DE /* LaunchScreen.storyboard in Resources */,
 				5F6494AE24D999BC00D6A3DE /* Preview Assets.xcassets in Resources */,
-				5F6494B924D99C8700D6A3DE /* Assets.xcassets in Resources */,
+				5F24BD0624D9C48F004522F7 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -342,6 +350,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		5F24BD1024D9D197004522F7 /* XCRemoteSwiftPackageReference "SwiftUIKit" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/youjinp/SwiftUIKit.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 0.0.8;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		5F24BD1124D9D197004522F7 /* SwiftUIKit */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 5F24BD1024D9D197004522F7 /* XCRemoteSwiftPackageReference "SwiftUIKit" */;
+			productName = SwiftUIKit;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 5F64949924D999BB00D6A3DE /* Project object */;
 }

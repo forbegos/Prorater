@@ -7,6 +7,7 @@
 //
 
 import SwiftUI
+import SwiftUIKit
 
 struct ColorManager {
     
@@ -16,7 +17,7 @@ struct ColorManager {
 
 struct ContentView: View {
     
-    @State private var rentAmountText = ""
+    @State private var rentAmount: Double? = 0.0
     @State private var startDate = Date()
     
     var totalDaysInMonth : Int {
@@ -34,7 +35,7 @@ struct ContentView: View {
     }
     
     var proratedRent : Double {
-        let rentDouble = Double(rentAmountText)!
+        let rentDouble = rentAmount!
         let dailyRent = rentDouble / Double(totalDaysInMonth)
         return dailyRent * Double(remainingDaysInMonth)
     }
@@ -45,15 +46,14 @@ struct ContentView: View {
             LinearGradient(gradient:  Gradient(colors: [.blue, .white]), startPoint: .top, endPoint: .bottom)
                 .edgesIgnoringSafeArea(.all)
             
-            VStack(spacing: 10) {
-                Spacer()
-                Spacer()
+            VStack(spacing: 20) {
+ 
                 VStack {
                     Text("Prorater")
-                        .font(.title)
+                        .font(.largeTitle)
                         .foregroundColor(.white)
+                        .padding(.top, 15.0)
                 }
-                Spacer()
                 VStack {
                     
                     DatePicker("Select Date", selection: $startDate, displayedComponents: .date)
@@ -63,23 +63,30 @@ struct ContentView: View {
                         
                     
                 }
-                Spacer()
-                VStack {
-                    TextField("Enter Amount", text : $rentAmountText).padding(.leading) .keyboardType(.decimalPad)
-                    Spacer()
+                VStack(alignment: .center) {
+                    Section {
+                        CurrencyTextField(" Enter Amount",  value : self.$rentAmount)
+                            .frame(height: 40.0).keyboardType(.decimalPad).background(/*@START_MENU_TOKEN@*/Color.white/*@END_MENU_TOKEN@*/) .font(.headline)
+                    }
+                    
+                        
+                            
                     VStack {
-                        if Double(rentAmountText) != nil {
+                        if rentAmount != nil {
                             Text("Days remaining in month: \(remainingDaysInMonth) days")
                             
-                            Text("Prorated amount: \(proratedRent, specifier: "%.2f")")
+                            Text("Prorated amount: $\(proratedRent, specifier: "%.2f")")
                                 .fontWeight(.bold)
-                            Spacer()
                         }
                     }
+                    Spacer()
+                    
                     VStack {
                         Text("(C) 2020 FdO Enterprises & Holdings LLC") .font(.footnote)
                     }
                 }
+                .padding()
+                .border(/*@START_MENU_TOKEN@*/Color.blue/*@END_MENU_TOKEN@*/, width: /*@START_MENU_TOKEN@*/2/*@END_MENU_TOKEN@*/)
                 
             }
         }
