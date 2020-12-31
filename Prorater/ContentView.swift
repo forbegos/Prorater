@@ -54,22 +54,19 @@ struct ContentView: View {
                         .foregroundColor(.white)
                         .padding(.top, 15.0)
                 }
-                VStack {
-                    
-                    DatePicker("Select Date", selection: $startDate, displayedComponents: .date)
-                    .labelsHidden()
-                        .padding(.leading)
-                        .colorScheme(/*@START_MENU_TOKEN@*/.dark/*@END_MENU_TOKEN@*/)
-                        
-                    
-                }
+                
                 VStack(alignment: .center) {
                     Section {
                         CurrencyTextField(" Enter Amount",  value : self.$rentAmount)
                             .frame(height: 40.0).keyboardType(.decimalPad).background(/*@START_MENU_TOKEN@*/Color.white/*@END_MENU_TOKEN@*/) .font(.headline)
                     }
-                    
-                        
+                    VStack {
+                      // add button to open calendar here, better UX
+                        DatePicker("Select Date", selection: $startDate, displayedComponents: .date)
+                            .labelsHidden()
+                            .padding(.leading)
+                            .colorScheme(.light)
+                    }
                             
                     VStack {
                         if rentAmount != nil {
@@ -98,6 +95,9 @@ struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
         Group {
             ContentView()
+            ContentView()
+                .previewLayout(.device)
+                .previewDevice("iPhone 12 Pro Max")
         }
     }
 }
