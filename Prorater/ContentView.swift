@@ -4,7 +4,7 @@
 //
 //  Created by Fernando de Orbegoso on 8/4/20.
 //  Copyright © 2020 Fernando de Orbegoso. All rights reserved.
-//  v1.6 
+//  v1.52
 
 import SwiftUI
 import SwiftUIKit
@@ -52,7 +52,7 @@ struct ContentView: View {
                         .font(.largeTitle)
                         .foregroundColor(.white)
                         .padding(.top, 15.0)
-                    Text("v1.6")
+                    Text("v1.52")
                     .foregroundColor(.white)
                 }
                 
