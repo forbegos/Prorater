@@ -34,6 +34,11 @@ struct ContentView: View {
         return dailyRent * Double(remainingDaysInMonth)
     }
     
+    var dailyRent : Double {
+        let rentDouble = rentAmount!
+        let rate = rentDouble / Double(totalDaysInMonth)
+        return rate
+    }
     
     var body: some View {
         ZStack {
@@ -47,6 +52,8 @@ struct ContentView: View {
                         .font(.largeTitle)
                         .foregroundColor(.white)
                         .padding(.top, 15.0)
+                    Text("v1.6")
+                    .foregroundColor(.white)
                 }
                 
                 VStack(alignment: .center) {
@@ -60,6 +67,8 @@ struct ContentView: View {
                         Text("Days remaining in month: \(remainingDaysInMonth) days")
                         
                         Text("Prorated amount: $\(proratedRent, specifier: "%.2f")")
+                            .fontWeight(.bold)
+                        Text("Daliy rate: $\(dailyRent, specifier: "%.2f")")
                             .fontWeight(.bold)
                     }
                     
