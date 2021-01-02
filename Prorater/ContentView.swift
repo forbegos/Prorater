@@ -4,16 +4,10 @@
 //
 //  Created by Fernando de Orbegoso on 8/4/20.
 //  Copyright © 2020 Fernando de Orbegoso. All rights reserved.
-//
+//  v1.6 
 
 import SwiftUI
 import SwiftUIKit
-
-struct ColorManager {
-    
-    static let ptgreen = Color("ptgreen")
-    static let ptyellow = Color("ptyellow")
-}
 
 struct ContentView: View {
     
@@ -47,7 +41,7 @@ struct ContentView: View {
                 .edgesIgnoringSafeArea(.all)
             
             VStack(spacing: 20) {
- 
+                
                 VStack {
                     Text("Prorater")
                         .font(.largeTitle)
@@ -56,35 +50,30 @@ struct ContentView: View {
                 }
                 
                 VStack(alignment: .center) {
+                    
                     Section {
                         CurrencyTextField(" Enter Amount",  value : self.$rentAmount)
                             .frame(height: 40.0).keyboardType(.decimalPad).background(/*@START_MENU_TOKEN@*/Color.white/*@END_MENU_TOKEN@*/) .font(.headline)
                     }
+                    
+                    if rentAmount != nil {
+                        Text("Days remaining in month: \(remainingDaysInMonth) days")
+                        
+                        Text("Prorated amount: $\(proratedRent, specifier: "%.2f")")
+                            .fontWeight(.bold)
+                    }
+                    
                     VStack {
-                      // add button to open calendar here, better UX
                         DatePicker("Select Date", selection: $startDate, displayedComponents: .date)
                             .labelsHidden()
                             .padding(.leading)
                             .colorScheme(.light)
+                            .datePickerStyle(GraphicalDatePickerStyle())
                     }
-                            
-                    VStack {
-                        if rentAmount != nil {
-                            Text("Days remaining in month: \(remainingDaysInMonth) days")
-                            
-                            Text("Prorated amount: $\(proratedRent, specifier: "%.2f")")
-                                .fontWeight(.bold)
-                        }
-                    }
-                    Spacer()
                     
-                    VStack {
-                        Text("(C) 2020 FdO Enterprises & Holdings LLC") .font(.footnote)
-                    }
+                    Spacer()
                 }
                 .padding()
-                .border(/*@START_MENU_TOKEN@*/Color.blue/*@END_MENU_TOKEN@*/, width: /*@START_MENU_TOKEN@*/2/*@END_MENU_TOKEN@*/)
-                
             }
         }
     }
@@ -101,4 +90,5 @@ struct ContentView_Previews: PreviewProvider {
         }
     }
 }
+
 
