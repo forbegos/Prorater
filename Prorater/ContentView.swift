@@ -59,7 +59,7 @@ struct ContentView: View {
                 VStack(alignment: .center) {
                     
                     Section {
-                        CurrencyTextField(" Enter Amount",  value : self.$rentAmount)
+                        CurrencyTextField("Enter Amount",  value : self.$rentAmount)
                             .frame(height: 40.0).keyboardType(.decimalPad).background(/*@START_MENU_TOKEN@*/Color.white/*@END_MENU_TOKEN@*/) .font(.headline)
                     }
                     
